@@ -76,7 +76,7 @@
     "gridfs-stream": "latest",
     "jsonwebtoken": "latest",
     "lodash": "latest",
-    "mongoose": "latest",
+    "mongoose": "3.8",
     "morgan": "latest",
     "ms": "latest",
     "nodemailer": "latest",
