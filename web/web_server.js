@@ -14,7 +14,7 @@ var moment          = require('moment');
 var path            = require('path');
 var rootPath        = path.normalize(__dirname);
 var log4js          = require('log4js');
-var logger          = log4js.getLogger();
+var logger          = log4js.getLogger('Web Server');
 
 var WebSocketClient = require('websocket').client;
 var WebSocketFrame  = require('websocket').frame;

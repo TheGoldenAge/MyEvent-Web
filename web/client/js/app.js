@@ -1,18 +1,22 @@
 'use strict';
 
-// Declare client level module which depends on views, and components
 angular.module('myApp', [
-  'ngRoute','ngCookies',
-  'controllers',
-  'services',
-  'factories',
-  'directives',
-  'filters',
-  'myApp.version'
-]).
-config(['$routeProvider','$httpProvider', function($routeProvider,$httpProvider) {
+    'ui.router',
+    'ngResource',
+    'ngSanitize',
+    'ngRoute',
+    'ngCookies',
+    'pascalprecht.translate',
+    'controllers',
+    'services',
+    'factories',
+    'directives',
+    'filters',
+    'myApp.version'
+])
+    .config(['$routeProvider','$httpProvider', function($stateProvider,$httpProvider) {
 
-  $routeProvider
+  $stateProvider
       .when('/',
       {controller:'homeCtrl',
         templateUrl:'views/home.html'
@@ -24,6 +28,10 @@ config(['$routeProvider','$httpProvider', function($routeProvider,$httpProvider)
       .when('/login',
       {controller:'loginCtrl',
           templateUrl:'views/login.html'
+      })
+      .when('/register',
+      {controller:'registerCtrl',
+          templateUrl:'views/register.html'
       })
       .otherwise({redirectTo: '/login'});
 
@@ -51,4 +59,27 @@ config(['$routeProvider','$httpProvider', function($routeProvider,$httpProvider)
                 }
             }
         });
-}]);
+}])
+    .config(['$translateProvider', function($translateProvider){
+        $translateProvider.translations('en_EN',{
+            'E-MAIL':'E-mail',
+            'E-MAIL_ADDRESS':'E-mail address',
+            'PASSWORD':'Password',
+            'LOGIN':'Login',
+            'SIGN_IN':'Sign in',
+            'SIGN_UP':'Sign up',
+            'OR':'or'
+        });
+        $translateProvider.translations('fr_FR',{
+            'E-MAIL':'Email',
+            'E-MAIL_ADDRESS':'Adresse email',
+            'PASSWORD':'Mot de passe',
+            'LOGIN':'Pseudo',
+            'SIGN_IN':'Se connecter',
+            'SIGN_UP':'S\'inscrire',
+            'OR':'ou'
+        });
+        $translateProvider.preferredLanguage('fr_FR');
+        $translateProvider.useSanitizeValueStrategy('escape');
+    }]);
+;

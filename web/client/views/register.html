@@ -1,0 +1,13 @@
+<div ng-show="error" class="alert alert-danger">{{error}}</div>
+
+<form action="#" id="login-form">
+    <div class="head">{{'SIGN_UP'|translate}}</div>
+
+    <div ng-include="'partials/social_form.html'"></div>
+
+    <div class="divider">
+        <span>{{'OR'|translate}}</span>
+    </div>
+
+    <div ng-include="'partials/register_form.html'"></div>
+</form>
