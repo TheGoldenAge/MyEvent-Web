@@ -1,13 +1,40 @@
 <div ng-show="error" class="alert alert-danger">{{error}}</div>
 
-<form action="#" id="login-form">
-    <div class="head">{{'SIGN_UP'|translate}}</div>
 
-    <div ng-include="'partials/social_form.html'"></div>
 
-    <div class="divider">
-        <span>{{'OR'|translate}}</span>
-    </div>
 
-    <div ng-include="'partials/register_form.html'"></div>
-</form>
+<div class="page-signup" id="page_index">
+    <section class="index-cookies" id="cookies_banner">
+
+    </section>
+    <header class="index-header" id="index-header">
+
+    </header>
+    <section class="index-body">
+        <div class="index-container">
+            <div class="index-headings">
+
+            </div>
+            <form action="#" id="index-form">
+                <div class="head">{{'THE_SIGN_UP'|translate}}</div>
+
+                <div ng-include="'shared/social_form.html'"></div>
+
+                <div class="divider">
+                    <span>{{'OR'|translate}}</span>
+                </div>
+
+                <div ng-include="'shared/register_form.html'"></div>
+            </form>
+            <div class="index-confirm" id="index-confirm">
+
+            </div>
+        </div>
+    </section>
+    <footer class="index-footer">
+
+    </footer>
+    <section class="">
+
+    </section>
+</div>

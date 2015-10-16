@@ -1,6 +1,6 @@
 'use strict';
 
-describe('myApp.version module', function() {
+/*describe('myApp.version module', function() {
   beforeEach(module('myApp.version'));
 
   describe('client-version directive', function() {
@@ -14,4 +14,4 @@ describe('myApp.version module', function() {
       });
     });
   });
-});
+});*/

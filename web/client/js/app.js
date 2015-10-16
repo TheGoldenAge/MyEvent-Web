@@ -1,3 +1,7 @@
+/**
+ * Created by vedorhto on 28/08/2015.
+ */
+
 'use strict';
 
 angular.module('myApp', [
@@ -7,30 +11,30 @@ angular.module('myApp', [
     'ngRoute',
     'ngCookies',
     'pascalprecht.translate',
-    'controllers',
-    'services',
-    'factories',
-    'directives',
-    'filters',
-    'myApp.version'
+    'myApp.controllers',
+    'myApp.services',
+    'myApp.factories',
+    'myApp.directives',
+    'myApp.filters'/*,
+    'myApp.version'*/
 ])
     .config(['$routeProvider','$httpProvider', function($stateProvider,$httpProvider) {
 
   $stateProvider
       .when('/',
-      {controller:'homeCtrl',
+      {controller:'HomeController',
         templateUrl:'views/home.html'
       })
       .when('/home',
-      {controller:'homeCtrl',
+      {controller:'HomeController',
         templateUrl:'views/home.html'
       })
       .when('/login',
-      {controller:'loginCtrl',
+      {controller:'LoginController',
           templateUrl:'views/login.html'
       })
       .when('/register',
-      {controller:'registerCtrl',
+      {controller:'RegisterController',
           templateUrl:'views/register.html'
       })
       .otherwise({redirectTo: '/login'});
@@ -65,19 +69,27 @@ angular.module('myApp', [
             'E-MAIL':'E-mail',
             'E-MAIL_ADDRESS':'E-mail address',
             'PASSWORD':'Password',
+            'THE_LOGIN':'Login',
+            'THE_SIGN_UP':'Sign up',
             'LOGIN':'Login',
             'SIGN_IN':'Sign in',
             'SIGN_UP':'Sign up',
-            'OR':'or'
+            'OR':'or',
+            'CONNECT_WITH':'Connect with',
+            'SIGN_UP_WITH':'Sign up with'
         });
         $translateProvider.translations('fr_FR',{
             'E-MAIL':'Email',
             'E-MAIL_ADDRESS':'Adresse email',
             'PASSWORD':'Mot de passe',
+            'THE_LOGIN':'Connexion',
+            'THE_SIGN_UP':'Inscription',
             'LOGIN':'Pseudo',
             'SIGN_IN':'Se connecter',
             'SIGN_UP':'S\'inscrire',
-            'OR':'ou'
+            'OR':'ou',
+            'CONNECT_WITH':'Se connecter avec',
+            'SIGN_UP_WITH':'S\'inscrire avec'
         });
         $translateProvider.preferredLanguage('fr_FR');
         $translateProvider.useSanitizeValueStrategy('escape');
