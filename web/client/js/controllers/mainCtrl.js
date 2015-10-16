@@ -1,7 +1,8 @@
 /**
  * Created by vedorhto on 04/09/2015.
  */
-angular.module('controllers',['ngRoute','homeCtrl','loginCtrl','registerCtrl']);
-angular.module('homeCtrl',[]);
-angular.module('loginCtrl',[]);
-angular.module('registerCtrl',[]);
+angular.module('myApp.controllers',['ngRoute','myApp.home','myApp.login','registerCtrl']);
+/*
+angular.module('myApp.home',[]);
+angular.module('myApp.login',[]);
+angular.module('registerCtrl',[]);*/

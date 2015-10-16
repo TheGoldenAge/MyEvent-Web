@@ -17,14 +17,40 @@
         <img ng-if="dataLoading" src="data:image/gif;basse64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==">
     </div>
 </form-->
-<form action="#" id="login-form">
-    <div class="head">{{'SIGN_IN'|translate}}</div>
+<div class="page-login" id="page_index">
+    <section class="index-cookies" id="cookies_banner">
 
-    <div ng-include="'partials/social_form.html'"></div>
+    </section>
+    <header class="index-header" id="index-header">
 
-    <div class="divider">
-        <span>{{'OR'|translate}}</span>
-    </div>
+    </header>
+    <section class="index-body">
+        <div class="index-container">
+            <div class="index-headings">
 
-    <div ng-include="'partials/login_form.html'"></div>
-</form>
+            </div>
+            <form action="#" id="index-form">
+                <div class="head">{{'THE_LOGIN'|translate}}</div>
+
+                <div ng-include="'shared/social_form.html'"></div>
+
+                <div class="divider">
+                    <span>{{'OR'|translate}}</span>
+                </div>
+
+                <div ng-include="'shared/login_form.html'"></div>
+            </form>
+            <div class="index-confirm" id="index-confirm">
+
+            </div>
+        </div>
+    </section>
+    <footer class="index-footer">
+
+    </footer>
+    <section class="">
+
+    </section>
+</div>
+
+

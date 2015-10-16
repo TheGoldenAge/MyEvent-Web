@@ -3,7 +3,7 @@
  */
 'use strict'
 
-angular.module('factories',[])
+angular.module('myApp.factories',[])
     .factory('AuthenticationService',['Base64','$http','$cookieStore','$rootScope','$timeout', function(Base64,$http,$cookieStore,$rootScope,$timeout){
         var service = {};
 

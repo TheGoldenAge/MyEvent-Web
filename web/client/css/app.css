@@ -1,34 +1,5 @@
 /* app css stylesheet */
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
-
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
-
 /*****************
     LOGN PAGE
 *****************/
@@ -39,12 +10,17 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+html,body{
+  height: 100%;
+  position: relative;
+}
 body{
-  background: #175690;
+  /*background: #175690;
+  */
   font-family: 'open sans', sans-serif;
 }
-form#login-form{
-  background: #fff;
+form#index-form{
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 6px;
   box-shadow: 0 0 3px #000;
   margin: 30px auto;
@@ -79,7 +55,7 @@ form#login-form{
 .social ul li{
   list-style: none;
   float: left;
-  width: 31.33%;
+  width: 48%/*31.33%*/;
   margin: 0 1%;
 }
 .social ul li a{
@@ -164,7 +140,8 @@ form#login-form{
   border: 1px solid #bdbdbd;
 }
 .input-field input[type="submit"]{
-  background: #f85f64;
+  /*background: #f85f64;*/
+  background: #1c94c6;
   border: medium none;
   border-radius: 4px;
   color: #fff;
@@ -184,7 +161,8 @@ form#login-form{
   width: 100%;
 }
 .input-field input[type="submit"]:hover{
-  background: #fe7175;
+  /*background: #fe7175;*/
+  background: #1779a2;
 }
 .text-p{
   font-size: 14px;
@@ -194,9 +172,33 @@ form#login-form{
 .text-p a{
   color: #175690;
 }
+#page_index {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: table;
+  font-family: "Open Sans",Arial,sans-serif;
+  height: 100%;
+  width: 100%;
+}
+.index-body{
+  display: table-row;
+  height: 100%;
+  vertical-align: middle;
+}
+
 @media (max-width: 480px){
   form#login-form {
     width: 90%;
     margin: 30px auto;
+  }
+}
+
+@media only screen and (min-width: 1224px){
+  #page_index.page-signup {
+    background-image: url('../img/kartandtinki1_photo-wallpapers_02.jpg');
+  }
+  #page_index.page-login {
+    background-image: url('../img/blue-background-full-hd.jpg');
   }
 }

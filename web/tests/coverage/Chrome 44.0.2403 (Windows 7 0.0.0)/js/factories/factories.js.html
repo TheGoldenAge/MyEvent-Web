@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js\factories\factories.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">js\factories\factories.js</span></h1>
+    <h2>
+        Statements: <span class="metric">1.52% <small>(1 / 66)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 9)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">1.52% <small>(1 / 66)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">js/factories/</a> &#187; factories.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Created by vedorhto on 04/09/2015.
+ */
+'use strict'
+&nbsp;
+angular.module('factories',[])
+    .factory('AuthenticationService',['Base64','$http','$cookieStore','$rootScope','$timeout', <span class="fstat-no" title="function not covered" >function(Base64,$http,$cookieStore,$rootScope,$timeout){</span>
+<span class="cstat-no" title="statement not covered" >        var service = {};</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        service.Login = <span class="fstat-no" title="function not covered" >function(username, password, callback){</span></span>
+<span class="cstat-no" title="statement not covered" >            $timeout(<span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >                var response = {success:username === 'test' &amp;&amp; password === 'test'};</span>
+<span class="cstat-no" title="statement not covered" >                if(!response.success){</span>
+<span class="cstat-no" title="statement not covered" >                    response.message = "Username or password is incorrect";</span>
+                }
+<span class="cstat-no" title="statement not covered" >                callback(response);</span>
+            },1000);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $http.post('api/authenticate',{username:username, password:password})</span>
+                .success(<span class="fstat-no" title="function not covered" >function(response){</span>
+<span class="cstat-no" title="statement not covered" >                    callback(response);</span>
+                });
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        service.SetCredentials = <span class="fstat-no" title="function not covered" >function(username, password){</span></span>
+<span class="cstat-no" title="statement not covered" >            var authdata = Base64.encode(username + ':' +password);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $rootScope.globals = {</span>
+                currentUser:{
+                    username:username,
+                    authdata:authdata
+                }
+            };
+<span class="cstat-no" title="statement not covered" >            $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;</span>
+<span class="cstat-no" title="statement not covered" >            $cookieStore.put('globals', $rootScope.globals);</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        service.ClearCredentials = <span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >            $rootScope.globals = {};</span>
+<span class="cstat-no" title="statement not covered" >            $cookieStore.remove('globals');</span>
+<span class="cstat-no" title="statement not covered" >            $http.defaults.headers.common.Authorization = 'Basic ';</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return service;</span>
+    }])
+    .factory('Base64', <span class="fstat-no" title="function not covered" >function(){</span>
+        /* jshint ignore:start */
+<span class="cstat-no" title="statement not covered" >        var keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            encode: <span class="fstat-no" title="function not covered" >function (input) {</span>
+<span class="cstat-no" title="statement not covered" >                var output = "";</span>
+<span class="cstat-no" title="statement not covered" >                var chr1, chr2, chr3 = "";</span>
+<span class="cstat-no" title="statement not covered" >                var enc1, enc2, enc3, enc4 = "";</span>
+<span class="cstat-no" title="statement not covered" >                var i = 0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                do {</span>
+<span class="cstat-no" title="statement not covered" >                    chr1 = input.charCodeAt(i++);</span>
+<span class="cstat-no" title="statement not covered" >                    chr2 = input.charCodeAt(i++);</span>
+<span class="cstat-no" title="statement not covered" >                    chr3 = input.charCodeAt(i++);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    enc1 = chr1 &gt;&gt; 2;</span>
+<span class="cstat-no" title="statement not covered" >                    enc2 = ((chr1 &amp; 3) &lt;&lt; 4) | (chr2 &gt;&gt; 4);</span>
+<span class="cstat-no" title="statement not covered" >                    enc3 = ((chr2 &amp; 15) &lt;&lt; 2) | (chr3 &gt;&gt; 6);</span>
+<span class="cstat-no" title="statement not covered" >                    enc4 = chr3 &amp; 63;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    if (isNaN(chr2)) {</span>
+<span class="cstat-no" title="statement not covered" >                        enc3 = enc4 = 64;</span>
+                    } else <span class="cstat-no" title="statement not covered" >if (isNaN(chr3)) {</span>
+<span class="cstat-no" title="statement not covered" >                        enc4 = 64;</span>
+                    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    output = output +</span>
+                        keyStr.charAt(enc1) +
+                        keyStr.charAt(enc2) +
+                        keyStr.charAt(enc3) +
+                        keyStr.charAt(enc4);
+<span class="cstat-no" title="statement not covered" >                    chr1 = chr2 = chr3 = "";</span>
+<span class="cstat-no" title="statement not covered" >                    enc1 = enc2 = enc3 = enc4 = "";</span>
+                } while (i &lt; input.length);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                return output;</span>
+            },
+&nbsp;
+            decode: <span class="fstat-no" title="function not covered" >function (input) {</span>
+<span class="cstat-no" title="statement not covered" >                var output = "";</span>
+<span class="cstat-no" title="statement not covered" >                var chr1, chr2, chr3 = "";</span>
+<span class="cstat-no" title="statement not covered" >                var enc1, enc2, enc3, enc4 = "";</span>
+<span class="cstat-no" title="statement not covered" >                var i = 0;</span>
+&nbsp;
+                // remove all characters that are not A-Z, a-z, 0-9, +, /, or =
+<span class="cstat-no" title="statement not covered" >                var base64test = /[^A-Za-z0-9\+\/\=]/g;</span>
+<span class="cstat-no" title="statement not covered" >                if (base64test.exec(input)) {</span>
+<span class="cstat-no" title="statement not covered" >                    window.alert("There were invalid base64 characters in the input text.\n" +</span>
+                        "Valid base64 characters are A-Z, a-z, 0-9, '+', '/',and '='\n" +
+                        "Expect errors in decoding.");
+                }
+<span class="cstat-no" title="statement not covered" >                input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                do {</span>
+<span class="cstat-no" title="statement not covered" >                    enc1 = keyStr.indexOf(input.charAt(i++));</span>
+<span class="cstat-no" title="statement not covered" >                    enc2 = keyStr.indexOf(input.charAt(i++));</span>
+<span class="cstat-no" title="statement not covered" >                    enc3 = keyStr.indexOf(input.charAt(i++));</span>
+<span class="cstat-no" title="statement not covered" >                    enc4 = keyStr.indexOf(input.charAt(i++));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    chr1 = (enc1 &lt;&lt; 2) | (enc2 &gt;&gt; 4);</span>
+<span class="cstat-no" title="statement not covered" >                    chr2 = ((enc2 &amp; 15) &lt;&lt; 4) | (enc3 &gt;&gt; 2);</span>
+<span class="cstat-no" title="statement not covered" >                    chr3 = ((enc3 &amp; 3) &lt;&lt; 6) | enc4;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    output = output + String.fromCharCode(chr1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    if (enc3 != 64) {</span>
+<span class="cstat-no" title="statement not covered" >                        output = output + String.fromCharCode(chr2);</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    if (enc4 != 64) {</span>
+<span class="cstat-no" title="statement not covered" >                        output = output + String.fromCharCode(chr3);</span>
+                    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    chr1 = chr2 = chr3 = "";</span>
+<span class="cstat-no" title="statement not covered" >                    enc1 = enc2 = enc3 = enc4 = "";</span>
+&nbsp;
+                } while (i &lt; input.length);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                return output;</span>
+            }
+        };
+&nbsp;
+        /* jshint ignore:end */
+    })</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Oct 15 2015 17:47:17 GMT+0200 (Paris, Madrid (heure d’été))</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
