@@ -76,7 +76,16 @@ angular.module('myApp', [
             'SIGN_UP':'Sign up',
             'OR':'or',
             'CONNECT_WITH':'Connect with',
-            'SIGN_UP_WITH':'Sign up with'
+            'SIGN_UP_WITH':'Sign up with',
+            'ORG_EVENT':'Organize your event',
+            'MYEVENT':'My Event',
+            'MARIAGE':'Wedding',
+            'BAPTEME':'Baptism',
+            'HOWITWORKS':'How does it work?',
+            'FEES':'Fees',
+            'CONTACT':'Contact us',
+            'BY_MAIL':'By Email'
+
         });
         $translateProvider.translations('fr_FR',{
             'E-MAIL':'Email',
@@ -89,7 +98,16 @@ angular.module('myApp', [
             'SIGN_UP':'S\'inscrire',
             'OR':'ou',
             'CONNECT_WITH':'Se connecter avec',
-            'SIGN_UP_WITH':'S\'inscrire avec'
+            'SIGN_UP_WITH':'S\'inscrire avec',
+            'ORG_EVENT':'Organiser votre évenement',
+            'MYEVENT':'My Event',
+            'MARIAGE':'Marriage',
+            'BAPTEME':'Baptême',
+            'HOWITWORKS':'Comment ça marche?',
+            'FEES':'Tarifs',
+            'CONTACT':'Nous contacter',
+            'BY_MAIL':'Par email'
+
         });
         $translateProvider.preferredLanguage('fr_FR');
         $translateProvider.useSanitizeValueStrategy('escape');

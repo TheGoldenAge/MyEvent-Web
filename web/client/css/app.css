@@ -210,3 +210,72 @@ form#index-form{
     background-image: url('../img/blue-background-full-hd.jpg');
   }
 }
+
+/****************
+Global footer
+*****************/
+.global-footer {
+  position: relative;
+  border-top: #666 solid 6px;
+  background: #333;
+  display: block;
+  letter-spacing: .5px;
+}
+
+.footer-space{
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  display: block;
+  letter-spacing: .5px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  color: #666;
+}
+
+.footer-links{
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  letter-spacing: .5px;
+  padding-left: 25px;
+  padding-right: 25px;
+  width: 33%;
+  list-style: none;
+}
+
+.footer-links a{
+  color: #ccc!important;
+  text-decoration: none;
+}
+
+.footer-links a:focus, .footer-links a:hover, .footer-links a:active {
+  text-decoration : underline;
+}
+
+
+.text-small {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.text-medium {
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.text-centered{
+  text-align: center;
+}
+.footer-divider {
+  border-bottom: 2px solid #232323;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
