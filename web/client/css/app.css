@@ -13,6 +13,7 @@
 html,body{
   height: 100%;
   position: relative;
+  background-color: #F7F7F7;
 }
 body{
   /*background: #175690;
@@ -417,11 +418,98 @@ body {
 }
 
 
+
+/* Partners
+------------------------- */
+.header_partner{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.partner-list{
+  display: block;
+  font-size: 0;
+  letter-spacing: 0;
+  zoom: 1;
+}
+
+.partner-space{
+
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  width: 33.33333%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.poster-card{
+  transform: translate3d(0,0,0);
+  background-color: #fff;
+  box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  height: 200px;
+}
+
+.partner-link a{
+  color: #00a1ee;
+  text-decoration: none;
+}
+
+.poster-card__header{
+  position: relative;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+
+}
+
+.poster-card__image{
+  transition: background-color .5s;
+  overflow: hidden;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+.poster-card__label{
+  background-color: rgba(255,255,255,.75);
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(0,0,0,.8);
+  box-sizing: border-box;
+  padding: 2px 10px;
+  position: absolute;
+  display: inline-block;
+  top: 10px;
+  right: 10px;
+  font-weight: 400;
+
+}
+
+
+
 /* Featurettes
 ------------------------- */
 
 .featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin: 60px 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
