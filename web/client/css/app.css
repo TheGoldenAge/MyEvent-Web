@@ -3,13 +3,13 @@
 /*****************
     LOGN PAGE
 *****************/
-*{
+/**{
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
+}*/
 html,body{
   height: 100%;
   position: relative;
@@ -191,6 +191,12 @@ form#index-form{
   display: table-row;
   height: 1%;
 }
+#page_index.page-signup {
+  background-image: url('../img/kartandtinki1_photo-wallpapers_02.jpg');
+}
+#page_index.page-login {
+  background-image: url('../img/blue-background-full-hd.jpg');
+}
 #page_index .index-navbar {
   padding: 0 100px;
   position: relative;
@@ -242,6 +248,23 @@ form#index-form{
   padding: 4px 20px;
   text-align: center;
 }
+#page_index .index-navbar-links>a {
+  color: #EFEFF2;
+  margin-right: 15px;
+  white-space: nowrap;
+  transition-property: color;
+  transition-duration: 0.15s;
+  -webkit-transition-property: color;
+}
+#page_index .index-container {
+  display: table-cell;
+  padding: 0 30px;
+  position: relative;
+  vertical-align: middle;
+}
+#page_index .index-footer>.index-container {
+  padding-bottom: 24px;
+}
 
 @media (max-width: 480px){
   form#login-form {
@@ -250,13 +273,13 @@ form#index-form{
   }
 }
 
+@media only screen and (max-height: 700px){
+  #page_index .index-footer>.index-container {
+    padding-bottom: 10px;
+  }
+}
 @media only screen and (min-width: 1224px){
-  #page_index.page-signup {
-    background-image: url('../img/kartandtinki1_photo-wallpapers_02.jpg');
-  }
-  #page_index.page-login {
-    background-image: url('../img/blue-background-full-hd.jpg');
-  }
+
 }
 
 /****************
