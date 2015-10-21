@@ -9,6 +9,10 @@
   <title>My Events</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+  <meta http-equiv="content-type" content="image/png;charset=utf-8"/>
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="Content-Language" content="fr" />
   <base href="/"/>
   <!--=======Font Open Sans======-->
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -21,21 +25,26 @@
   <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="css/app.css">
 
-  <meta http-equiv="Content-Language" content="fr" />
   <link rel="shortcut icon" href="#" />
-
-
-  <meta name="robots" content="index, follow" />
-
   <link rel="alternate" href="#" hreflang="FR-fr" />
   <link rel="canonical" href="#" />
-
-
   <link rel="stylesheet" type="text/css" href="https://cdn.evbstatic.com/s3-build/7059-rc2015-10-14_12.04-5d9c8ef/django/css/production/base_styles.css" />
   <link rel="stylesheet" type="text/css" href="https://cdn.evbstatic.com/s3-build/7059-rc2015-10-14_12.04-5d9c8ef/django/css/src/smacss/non_modular/home.css" />
   <link rel="stylesheet" type="text/css" href="https://cdn.evbstatic.com/s3-build/7059-rc2015-10-14_12.04-5d9c8ef/django/css/src/smacss/non_modular/home_consumer.css" />
   <link rel="stylesheet" type="text/css" href="https://cdn.evbstatic.com/s3-build/7059-rc2015-10-14_12.04-5d9c8ef/django/css/src/smacss/non_modular/consumer_header/consumer_header.css" />
 
+
+  <!------------------------------------------------------------------------------------------------->
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="vendor/ie-emulation-modes-warning.js"></script><![endif]-->
+    <script src="vendor/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <!------------------------------------------------------------------------------------------------->
 
 </head>
 <body ng-cloak>
@@ -45,7 +54,7 @@
 
 
 
-  <div ng-view></div>
+  <div ng-view style="height: 100%;"></div>
 
 
   <!--div>Angular seed app: v<span app-version></span></div-->
@@ -72,6 +81,13 @@
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="bower_components/async/dist/async.min.js"></script>
+  <script src="bower_components/ngstorage/ngStorage.js"></script>
+  <script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
+  <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+  <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+  <script src="bower_components/holderjs/holder.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="bower_components/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.js"></script>
   <!--Main JS -->
   <script src="js/app.js"></script>
   <!--Controllers -->
@@ -79,6 +95,7 @@
   <script src="js/controllers/homeCtrl.js"></script>
   <script src="js/controllers/loginCtrl.js"></script>
   <script src="js/controllers/registerCtrl.js"></script>
+  <script src="js/controllers/navCtrl.js"></script>
   <!--Directives -->
   <script src="js/directives/directives.js"></script>
   <!--Filters -->

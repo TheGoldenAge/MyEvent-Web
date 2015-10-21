@@ -3,7 +3,7 @@
  */
 'use strict'
 
-angular.module('registerCtrl',[])
+angular.module('myApp.register',[])
     .controller('RegisterController',['$scope','$rootScope','$location','$http','AuthenticationService', function($scope, $rootScope, $location, $http, AuthenticationService){
         //reset login status
         AuthenticationService.ClearCredentials();

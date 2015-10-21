@@ -173,6 +173,11 @@ form#index-form{
 .text-p a{
   color: #175690;
 }
+.index-body{
+  display: table-row;
+  height: 100%;
+  vertical-align: middle;
+}
 #page_index {
   background-size: cover;
   background-position: center;
@@ -182,11 +187,6 @@ form#index-form{
   height: 100%;
   width: 100%;
 }
-.index-body{
-  display: table-row;
-  height: 100%;
-  vertical-align: middle;
-}
 #page_index .index-footer {
   display: table-row;
   height: 1%;
@@ -194,6 +194,53 @@ form#index-form{
 #page_index .index-navbar {
   padding: 0 100px;
   position: relative;
+}
+#page_index .index-navbar-links {
+  color: #EFEFF2;
+  font-size: 11px;
+  padding: 4px 20px;
+  text-align: center;
+}
+#page_index .index-navbar-lang {
+  background-color: rgba(10,10,22,0.45);
+  border-radius: 3px;
+  color: #D1D1D7;
+  cursor: pointer;
+  font-size: 11px;
+  height: 22px;
+  left: 0;
+  line-height: 22px;
+  margin-top: -11px;
+  padding: 0 25px 0 8px;
+  position: absolute;
+  top: 50%;
+  transition-property: background-color,color;
+  transition-duration: 0.15s;
+  -webkit-transition-property: background-color,color;
+}
+#page_index .index-navbar-lang>.lang-carret {
+  position: absolute;
+  right: 8px;
+  top: 6px;
+}
+#page_index .index-navbar-lang>.lang-select {
+  border: 0 none;
+  cursor: pointer;
+  font-size: 11px;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#page_index .index-navbar-links {
+  color: #EFEFF2;
+  font-size: 11px;
+  padding: 4px 20px;
+  text-align: center;
 }
 
 @media (max-width: 480px){
@@ -255,7 +302,6 @@ Global footer
 .footer-links a:focus, .footer-links a:hover, .footer-links a:active {
   text-decoration : underline;
 }
-
 
 .text-small {
   font-size: 12px;
@@ -336,7 +382,6 @@ body {
 }
 
 .minor {
-
   background: transparent;
   position: absolute;
   float: right;
