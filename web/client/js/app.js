@@ -86,7 +86,13 @@ angular.module('myApp', [
             'FEES':'Fees',
             'CONTACT':'Contact us',
             'BY_MAIL':'By Email',
-            'CREATE_AN_EVENT':'Create an event'
+            'CREATE_AN_EVENT':'Create an event',
+            'CAR_ORGANIZE':'Organize your wedding',
+            'CAR_ORGANIZE_P':'Organiser votre mariage, choisissez vos faire part.',
+            'CAR_CREATE':'Créer vos faire parts.',
+            'CAR_CREATE_P':'Envoyer les aux invités. Gérer les confirmations.',
+            'CAR_SHARE':'Choisissez les invités',
+            'CAR_SHARE_P':'Choisissez vos invités et envoyer les invitations'
 
         });
         $translateProvider.translations('fr_FR',{
@@ -109,7 +115,31 @@ angular.module('myApp', [
             'FEES':'Tarifs',
             'CONTACT':'Nous contacter',
             'BY_MAIL':'Par email',
-            'CREATE_AN_EVENT':'Cr�er un �v�nement'
+            'CREATE_AN_EVENT':'Créer un événement',
+            'CAR_ORGANIZE':'Organiser votre mariage',
+            'CAR_ORGANIZE_P':'Organiser votre mariage, choisissez vos faire part.',
+            'CAR_CREATE':'Créer vos faire parts.',
+            'CAR_CREATE_P':'Envoyer les aux invités. Gérer les confirmations.',
+            'CAR_SHARE':'Choisissez les invités',
+            'CAR_SHARE_P':'Choisissez vos invités et envoyer les invitations',
+            'MAR_CREATE':'Créer',
+            'MAR_CREATE_P' :'Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.',
+            'VIEW_DETAILS':'En savoir plus',
+            'MAR_SHARE':'Partager',
+            'MAR_SHARE_P':'Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.',
+            'MAR_THANK':'Remercier',
+            'MAR_THANK_P':'Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.',
+            'PARTNERS':'Nos partenaires',
+            'FEAT_CREATE':'Créer, organiser, partager. ',
+            'FEAT_CREATE_SP':'Organiser votre mariage.',
+            'FEAT_CREATE_P':'Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nislconsectetur. Fusce dapibus, tellus ac cursus commodo.',
+            'FEAT_SHARE':'Choisissez vos faire parts.',
+            'FEAT_SHARE_SP':'Rien que pour vous.',
+            'FEAT_SHARE_P':'Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.',
+            'FEAT_THANK':'Restez poli. ',
+            'FEAT_THANK_SP':'Envoyer un remerciement.',
+            'FEAT_THANK_P':'Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.'
+
         });
         $translateProvider.preferredLanguage('fr_FR');
         $translateProvider.useSanitizeValueStrategy('escape');
