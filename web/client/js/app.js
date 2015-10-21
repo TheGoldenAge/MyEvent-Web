@@ -10,6 +10,7 @@ angular.module('myApp', [
     'ngSanitize',
     'ngRoute',
     'ngCookies',
+    'ngStorage',
     'pascalprecht.translate',
     'myApp.controllers',
     'myApp.services',
@@ -78,13 +79,14 @@ angular.module('myApp', [
             'CONNECT_WITH':'Connect with',
             'SIGN_UP_WITH':'Sign up with',
             'ORG_EVENT':'Organize your event',
-            'MYEVENT':'My Event',
-            'MARIAGE':'Wedding',
-            'BAPTEME':'Baptism',
-            'HOWITWORKS':'How does it work?',
+            'MY_EVENT':'My Event',
+            'WEDDING':'Wedding',
+            'BAPTISM':'Baptism',
+            'HOW_IT_WORKS':'How does it work?',
             'FEES':'Fees',
             'CONTACT':'Contact us',
-            'BY_MAIL':'By Email'
+            'BY_MAIL':'By Email',
+            'CREATE_AN_EVENT':'Create an event'
 
         });
         $translateProvider.translations('fr_FR',{
@@ -100,17 +102,18 @@ angular.module('myApp', [
             'CONNECT_WITH':'Se connecter avec',
             'SIGN_UP_WITH':'S\'inscrire avec',
             'ORG_EVENT':'Organiser votre Ã©venement',
-            'MYEVENT':'My Event',
-            'MARIAGE':'Marriage',
-            'BAPTEME':'BaptÃªme',
-            'HOWITWORKS':'Comment Ã§a marche?',
+            'MY_EVENT':'My Event',
+            'WEDDING':'Marriage',
+            'BAPTISM':'BaptÃªme',
+            'HOW_IT_WORKS':'Comment Ã§a marche?',
             'FEES':'Tarifs',
             'CONTACT':'Nous contacter',
-            'BY_MAIL':'Par email'
-
+            'BY_MAIL':'Par email',
+            'CREATE_AN_EVENT':'Créer un événement'
         });
         $translateProvider.preferredLanguage('fr_FR');
         $translateProvider.useSanitizeValueStrategy('escape');
+        $translateProvider.useLocalStorage();
     }]);
 ;
 
