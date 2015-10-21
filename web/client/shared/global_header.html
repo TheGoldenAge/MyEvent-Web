@@ -8,6 +8,7 @@
 
         </div>
         <div class="minor">
+
             <a href="#register"  class ="header-link">{{'SIGN_UP'|translate}}</a>
             <a href="#login" class="header-link">{{'SIGN_IN'|translate}}</a>
             <a class="btn btn-lg btn-primary header-link " href="#">{{'CREATE_AN_EVENT'|translate}}</a>
@@ -15,3 +16,16 @@
         </div>
     </div>
 </div>
+<script>
+
+    $(window).scroll(function(){
+        var window_top = $(window).scrollTop() + 10;
+        var div_top = 350;
+
+        if (window_top > (div_top)) {
+            $('.global-header').addClass('header_fixed_added');
+        } else {
+            $('.global-header').removeClass('header_fixed_added');
+        }
+    });
+</script>
