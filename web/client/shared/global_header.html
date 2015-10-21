@@ -1,0 +1,30 @@
+<div class="global-header">
+    <div class="global-header-space">
+        <div class="major">
+            <a class="myevent-logo" href="#">
+                <i class="#LOGO_MY_EVENT#"></i>
+                <span >My Event</span>
+            </a>
+
+        </div>
+        <div class="minor">
+            <a href="/#register"  class ="header-link">Ouvrir un compte</a>
+            <a href="/#login" class="header-link">Se connecter</a>
+            <a class="btn btn-lg btn-primary header-link " href="#" >Créer un événement</a>
+
+        </div>
+    </div>
+</div>
+<script>
+
+    $(window).scroll(function(){
+        var window_top = $(window).scrollTop() + 10;
+        var div_top = 350;
+
+        if (window_top > (div_top)) {
+            $('.global-header').addClass('header_fixed_added');
+        } else {
+            $('.global-header').removeClass('header_fixed_added');
+        }
+    });
+</script>
