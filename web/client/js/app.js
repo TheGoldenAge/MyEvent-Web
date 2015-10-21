@@ -113,3 +113,5 @@ angular.module('myApp', [
         $translateProvider.useSanitizeValueStrategy('escape');
     }]);
 ;
+
+
