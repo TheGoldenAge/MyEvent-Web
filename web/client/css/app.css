@@ -410,6 +410,15 @@ body {
   color: #ccc;
 }
 
+.header_fixed_added {
+  position: fixed;
+  background-color: rgba(119, 119, 119, 0.8);
+  margin-top: 0px;
+  padding-top: 10px;
+  transition: background-color 1s;
+}
+
+
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -439,6 +448,18 @@ body {
 
 .carousel-indicators {
   bottom: 10px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
 }
 
 /* MARKETING CONTENT
