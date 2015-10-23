@@ -21,11 +21,14 @@ angular.module('myApp.nav',[])
 
         $scope.selectedLanguage = getDefaultLanguage();
 
-        $scope.ChangeLanguage = function(lang){
+        $scope.ChangeLanguage = function(lang) {
             $translate.use(lang);
             $localStorage.language = lang;
-            //TODO:$window.location.reload();
-            //TODO:$scope.$apply();
+
+        }
+
+        $scope.option = function(lang){
+            $translate.use(lang.language);
         }
 
     }]);
