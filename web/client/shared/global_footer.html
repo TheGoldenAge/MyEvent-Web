@@ -3,12 +3,12 @@
         <div class="footer-grid">
             <ul class="footer-links">
                 <h3 class="text-medium">{{'ORG_EVENT'|translate}}</h3>
-                <li><a href="#" class="text-small">{{'MARIAGE'|translate}}</a></li>
-                <li><a href="#" class="text-small">{{'BAPTEME'|translate}}</a></li>
+                <li><a href="#" class="text-small">{{'WEDDING'|translate}}</a></li>
+                <li><a href="#" class="text-small">{{'BAPTISM'|translate}}</a></li>
             </ul>
             <ul class="footer-links">
-                <h3 class="text-medium">{{'MYEVENT'|translate}}</h3>
-                <li><a href="#" class="text-small">{{'HOWITWORKS'|translate}}</a></li>
+                <h3 class="text-medium">{{'MY_EVENT'|translate}}</h3>
+                <li><a href="#" class="text-small">{{'HOW_IT_WORKS'|translate}}</a></li>
                 <li><a href="#" class="text-small">{{'FEES'|translate}}</a></li>
             </ul>
 
@@ -17,16 +17,21 @@
                 <li><a class="text-small" href="#">{{'BY_MAIL'|translate}}</a></li>
             </ul>
 
+            <ul class="footer-links" ng-controller='NavController'>
+                <h3 class="text-medium">{{'LANGUAGES'|translate}}</h3>
+                <li> <a class="text-small"><div ng-include="'shared/change_langage.html'"></div></a></li>
+            </ul>
+
         </div>
 
 
         <div class="text-small text-centered">
-            <div class="footer-divider">
-            </div>
+            <div class="footer-divider"></div>
 
-            <div>
+            <div class="footer-copyright">
                 <p class="text-medium text-centered">&copy; 2015 MyEvents</p>
             </div>
         </div>
     </div>
+
 </div>

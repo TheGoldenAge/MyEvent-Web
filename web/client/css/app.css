@@ -300,8 +300,8 @@ Global footer
   margin-top: 10px;
   display: block;
   letter-spacing: .5px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  /*padding-top: 25px;
+  padding-bottom: 25px;*/
   color: #666;
 }
 
@@ -311,9 +311,9 @@ Global footer
   overflow: hidden;
   vertical-align: top;
   letter-spacing: .5px;
-  padding-left: 25px;
-  padding-right: 25px;
-  width: 33%;
+  /*padding-left: 25px;*/
+  /*padding-right: 15px;*/
+  width: 24.1%;
   list-style: none;
 }
 
@@ -347,6 +347,11 @@ Global footer
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.footer-copyright{
+  padding-bottom: 5px;
+  margin-bottom: auto;
 }
 
 

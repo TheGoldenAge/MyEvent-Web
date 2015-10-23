@@ -1,22 +1,12 @@
 <div class="index-container">
     <div class="index-navbar">
         <div class="index-navbar-link">
-            <a class="evt-click">Fonctionalités</a>
-            <a class="evt-click">Aide & Contact</a>
-            <a class="evt-click">Condition générales d'utilisation</a>
-            <a class="evt-click">&nbsp;2015</a>
+             <a class="evt-click">Fonctionalitï¿½s</a>
+             <a class="evt-click">Aide & Contact</a>
+             <a class="evt-click">Condition gï¿½nï¿½rales d'utilisation</a>
+             <a class="evt-click">&nbsp;2015</a>
 
         </div>
-        <div class="index-navbar-lang" ng-controller="NavController">
-            <span class="lang-label">{{selectedLanguage.label}}</span>
-            <span class="lang-carret icon icon-chevron-down"></span>
-            <select ng-model="selectedLanguage"
-                    ng-change="option(selectedLanguage)"
-                    ng-options="i as i.label for i in languages"
-                    class="lang-select"
-                    id="language_select"
-                    ng-click="ChangeLanguage(selectedLanguage.language)">
-            </select>
-        </div>
+        <div ng-include="'shared/change_langage.html'">
     </div>
 </div>
