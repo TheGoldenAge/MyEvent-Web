@@ -38,6 +38,10 @@ angular.module('myApp', [
       {controller:'RegisterController',
           templateUrl:'views/register.html'
       })
+      .when('/newevent',
+      {controller:'NewEventController',
+          templateUrl:'views/newevent.html'
+      })
       .otherwise({redirectTo: '/login'});
 
         //interceptors to manipulate http request and responses
