@@ -121,6 +121,20 @@ form#index-form{
 .input-field input[type="email"],
 .input-field input[type="password"],
 .input-field input[name="login"]{
+   border: 1px solid #dfdfdf;
+   -moz-border-radius: 4px;
+   -webkit-border-radius: 4px;
+   border-radius: 4px;
+   box-shadow: 0 0 4px rgba(233, 233, 233, 0.2);
+   margin: 6px 0;
+   padding: 12px;
+   -webkit-transition: all 0.15s ease-in-out 0s;
+   -moz-transition: all 0.15s ease-in-out 0s;
+   -o-transition: all 0.15s ease-in-out 0s;
+   transition: all 0.15s ease-in-out 0s;
+   width: 100%;
+ }
+.input-field input[name="username"]{
   border: 1px solid #dfdfdf;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -137,6 +151,10 @@ form#index-form{
 .input-field input[type="email"]:focus,
 .input-field input[type="password"]:focus,
 .input-field input[name="login"]:focus{
+   outline: none;
+   border: 1px solid #bdbdbd;
+ }
+.input-field input[name="username"]:focus{
   outline: none;
   border: 1px solid #bdbdbd;
 }

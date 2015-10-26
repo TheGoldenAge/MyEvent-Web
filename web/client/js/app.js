@@ -4,91 +4,97 @@
 
 'use strict';
 
-angular.module('myApp', [
-    'ui.router',
-    'ngResource',
-    'ngSanitize',
-    'ngRoute',
-    'ngCookies',
-    'ngStorage',
-    'pascalprecht.translate',
-    'myApp.controllers',
-    'myApp.services',
-    'myApp.factories',
-    'myApp.directives',
-    'myApp.filters'/*,
-    'myApp.version'*/
-])
-    .config(['$routeProvider','$httpProvider', function($stateProvider,$httpProvider) {
+angular.module('myApp', ['ngSanitize', 'ui.router', 'ngResource', 'ngRoute', 'ngCookies', 'ngStorage', 'pascalprecht.translate', 'myApp.controllers', 'myApp.services', 'myApp.factories', 'myApp.directives', 'myApp.filters'/*,  'myApp.version'*/])
+    .config(['$compileProvider', function( $compileProvider ){
+            $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|sesame):/);
+            // pour les liens sesame, pour qu'angular ne rajoute pas unsafe devant
+        }])
+    .config(['$routeProvider','$httpProvider', function($routeProvider,$httpProvider) {
 
-  $stateProvider
-      .when('/',
-      {controller:'HomeController',
-        templateUrl:'views/home.html'
-      })
-      .when('/home',
-      {controller:'HomeController',
-        templateUrl:'views/home.html'
-      })
-      .when('/login',
-      {controller:'LoginController',
-          templateUrl:'views/login.html'
-      })
-      .when('/register',
-      {controller:'RegisterController',
-          templateUrl:'views/register.html'
-      })
-      .when('/newevent',
-      {controller:'NewEventController',
-          templateUrl:'views/newevent.html'
-      })
-      .otherwise({redirectTo: '/login'});
-
-        //interceptors to manipulate http request and responses
-        $httpProvider.interceptors.push(function($q, $window, $location){
-            return{
-                request:function(config){
-                    var path = new RegExp('/api');
-                    var path2 = new RegExp('http://');
-                    var path3 = new RegExp('https://');
-
-                    if(path.test(config.url) && !(path2.test(config.url) || path3.test(config.url))){
-                        if($window.sessionStorage.getItem('backendURL')){
-                            config.url = $window.sessionStorage.getItem('backendURL') + config.url;
-                            //config.headers.isWeb = 1;
-                        }
+        $routeProvider
+            .when('/', {
+                controller: 'HomeController',
+                templateUrl: 'views/home.html',
+                resolve: {
+                    'me': function (mymefactory) {
+                        return mymefactory.myBackURL().then(function (data) {
+                            return mymefactory.myme();
+                        });
                     }
-                    return config;
-                },
-                'responseError':function(rejection){
-                    if(rejection.status === 401){
-
-                    }
-                    return $q.reject(rejection);
                 }
-            }
-        });
-}])
+            })
+            .when('/home', {
+                controller: 'HomeController',
+                templateUrl: 'views/home.html',
+                resolve: {
+                    'me': function (mymefactory) {
+                        return mymefactory.myBackURL().then(function (data) {
+                            return mymefactory.myme();
+                        });
+                    }
+                }
+            })
+            .when('/login', {
+                controller: 'LoginController',
+                templateUrl: 'views/login.html',
+                resolve: {
+                    'me': function (mymefactory) {
+                        return mymefactory.myBackURL().then(function (data) {
+                            return mymefactory.myme();
+                        });
+                    }
+                }
+            })
+            .when('/register', {
+                controller: 'RegisterController',
+                templateUrl: 'views/register.html',
+                resolve: {
+                    'me': function (mymefactory) {
+                        return mymefactory.myBackURL().then(function (data) {
+                            return mymefactory.myme();
+                        });
+                    }
+                }
+            })
+            .when('/logout', {
+                controller: 'logoutCtrl',
+                //templateUrl: 'logout.html',
+                resolve: {
+                    'me': function (mymefactory) {
+                        return mymefactory.myBackURL().then(function (data) {
+                            return mymefactory.myme();
+                        });
+                    }
+                }
+            })
+            .when('/newevent', {
+                controller: 'NewEventController',
+                templateUrl: 'views/newevent.html'
+            })
+            .otherwise({redirectTo: '/login'})
+
+    }])
     .config(['$translateProvider', function($translateProvider){
         $translateProvider.translations('en_EN',{
-            'E-MAIL':'Email ',
-            'E-MAIL_ADDRESS':'E-mail adress',
+            'E-MAIL':'E-mail',
+            'E-MAIL_ADDRESS':'E-mail address',
             'PASSWORD':'Password',
-            'THE_LOGIN':'Connection ',
+            'THE_LOGIN':'Login',
             'THE_SIGN_UP':'Sign up',
-            'LOGIN':'Nickname ',
-            'SIGN_IN':'Sign In',
-            'SIGN_UP':'Sign Up ',
+            'LOGIN':'Login',
+            'SIGN_IN':'Sign in',
+            'SIGN_UP':'Sign up',
             'OR':'or',
-            'CONNECT_WITH':'Connect with ',
-            'SIGN_UP_WITH':'Register with ',
-            'ORG_EVENT':'Your event ',
-            'MY_EVENT':'My Event ',
+            'CONNECT_WITH':'Connect with',
+            'SIGN_UP_WITH':'Sign up with',
+            'ORG_EVENT':'Organize your event',
+            'MY_EVENT':'My Event',
             'WEDDING':'Wedding',
             'BAPTISM':'Baptism ',
             'HOW_IT_WORKS':'How it works?',
             'FEES':'Rates',
             'CONTACT':'Contact us',
+            'LOGOUT':'Logout',
             'BY_MAIL':'By email',
             'CREATE_AN_EVENT':'Create An Event ',
             'CAR_ORGANIZE':'Organize your wedding ',
@@ -129,45 +135,82 @@ angular.module('myApp', [
             'OR':'ou',
             'CONNECT_WITH':'Se connecter avec',
             'SIGN_UP_WITH':'S\'inscrire avec',
-            'ORG_EVENT':'Votre Ã©venement',
+            'ORG_EVENT':'Votre évenement',
             'MY_EVENT':'My Event',
             'WEDDING':'Marriage',
-            'BAPTISM':'BaptÃªme',
-            'HOW_IT_WORKS':'Comment Ã§a marche?',
+            'BAPTISM':'Baptême',
+            'HOW_IT_WORKS':'Comment ça marche?',
             'FEES':'Tarifs',
             'CONTACT':'Nous contacter',
             'BY_MAIL':'Par email',
-            'CREATE_AN_EVENT':'CrÃ©er un Ã©vÃ©nement',
+            'LOGOUT':'Se déconnecter',
+            'CREATE_AN_EVENT':'Créer un événement',
             'CAR_ORGANIZE':'Organiser votre mariage',
-            'CAR_ORGANIZE_P':'CrÃ©er votre site de mariage personalisÃ© Ã  votre image',
+            'CAR_ORGANIZE_P':'Créer votre site de mariage personalisé à votre image',
             'CAR_CREATE':'Choisir vos faire parts',
-            'CAR_CREATE_P':'Envoyer les faire parts personnalisÃ©s aux invitÃ©s',
-            'CAR_SHARE':'Espace partagÃ©',
+            'CAR_CREATE_P':'Envoyer les faire parts personnalisés aux invités',
+            'CAR_SHARE':'Espace partagé',
             'CAR_SHARE_P':'Informations utiles, photos, diaporamas, promotions',
-            'MAR_CREATE':'CrÃ©er',
-            'MAR_CREATE_P' :'Organiser votre mariage avec des invitÃ©s triÃ©s sur le volet, des faires parts personnalisÃ©s et en partageant les informations utiles.',
+            'MAR_CREATE':'Créer',
+            'MAR_CREATE_P' :'Organiser votre mariage avec des invités triés sur le volet, des faires parts personnalisés et en partageant les informations utiles.',
             'VIEW_DETAILS':'En savoir plus',
             'MAR_SHARE':'Partager',
-            'MAR_SHARE_P':'Un espace personnel intime avec les invitÃ©s. Un espace de partage pour profiter de l\'Ã©venement et partager photos et vidÃ©os.',
+            'MAR_SHARE_P':'Un espace personnel intime avec les invités. Un espace de partage pour profiter de l\'évenement et partager photos et vidéos.',
             'MAR_THANK':'Remercier',
-            'MAR_THANK_P':'Envoyer des cartes de remerciements personnalisÃ©s. DÃ©couvrir les liste des cadeaux des invitÃ©s et crÃ©er votre album souvenir.',
+            'MAR_THANK_P':'Envoyer des cartes de remerciements personnalisés. Découvrir les liste des cadeaux des invités et créer votre album souvenir.',
             'PARTNERS':'Nos partenaires',
-            'FEAT_CREATE':'CrÃ©er, organiser. ',
+            'FEAT_CREATE':'Créer, organiser. ',
             'FEAT_CREATE_SP':'Personnaliser votre mariage ',
-            'FEAT_CREATE_P':'Personnaliser votre Ã©venement (Diaporama, playlist partagÃ©e etc...). SÃ©lectionner les invitÃ©s parmis vos amis. Choisir votre faire part parmi une grande liste et les envoyer par email ou par courier aux invitÃ©s. Personnaliser les rappels et les confirmations de chaque invitÃ©s.',
-            'FEAT_SHARE':'Vivre l\'Ã©motion du moment.',
+            'FEAT_CREATE_P':'Personnaliser votre évenement (Diaporama, playlist partagée etc...). Sélectionner les invités parmis vos amis. Choisir votre faire part parmi une grande liste et les envoyer par email ou par courier aux invités. Personnaliser les rappels et les confirmations de chaque invités.',
+            'FEAT_SHARE':'Vivre l\'émotion du moment.',
             'FEAT_SHARE_SP':'Immortaliser et partager',
-            'FEAT_SHARE_P':'Vivre l\'Ã©venement en toute sÃ©rÃ©nitÃ©. Un espace privÃ© pour le partage des photos et vidÃ©os entre les invitÃ©s. La rÃ©cupÃ©ration des photos et vidÃ©os devient un jeu d\'enfant.',
+            'FEAT_SHARE_P':'Vivre l\'évenement en toute sérénité. Un espace privé pour le partage des photos et vidéos entre les invités. La récupération des photos et vidéos devient un jeu d\'enfant.',
             'FEAT_THANK':'Remercier. ',
-            'FEAT_THANK_SP':'Carte personnalisÃ©e.',
-            'FEAT_THANK_P':'Choisir les cartes de remerciements personnalisÃ©s ou bouquets de fleurs Ã  envoyer aux invitÃ©s. DÃ©couvrir la liste de cadeaux.',
+            'FEAT_THANK_SP':'Carte personnalisée.',
+            'FEAT_THANK_P':'Choisir les cartes de remerciements personnalisés ou bouquets de fleurs à envoyer aux invités. Découvrir la liste de cadeaux.',
             'LANGUAGES':'Changer de langue'
 
         });
         $translateProvider.preferredLanguage('fr_FR');
         $translateProvider.useSanitizeValueStrategy('escape');
         $translateProvider.useLocalStorage();
-    }]);
-;
+    }])
+    .config(function($httpProvider){
+        //CORS, force le cookie
+        $httpProvider.defaults.withCredentials = true;
+        $httpProvider.defaults.useXDomain = true ;
+        //interceptors to manipulate http request and responses
+        $httpProvider.interceptors.push(function($q, $window, $location){
+            return{
+                request:function(config){
+                    var path = new RegExp('/api');
+                    var path2 = new RegExp('http://');
+                    var path3 = new RegExp('https://');
+
+                    if(path.test(config.url) && !(path2.test(config.url) || path3.test(config.url))){
+                        if($window.sessionStorage.getItem('backendURL')){
+                            config.url = $window.sessionStorage.getItem('backendURL') + config.url;
+                            //config.headers.isWeb = 1;
+                        }
+                    }
+                    return config;
+                },
+                'responseError':function(rejection){
+                    if(rejection.status === 401){
+
+                    }
+                    return $q.reject(rejection);
+                }
+            }
+        });
+        $httpProvider.interceptors.push('TokenInterceptor');
+    })
+    .run(function($rootScope, $location, $route,AuthService){
+        $rootScope.$on('$routeChangeStart', function(event, next, current){
+            if(AuthService.isLogged() === false){
+                $location.path('/login');
+            }
+        })
+    });
 
 

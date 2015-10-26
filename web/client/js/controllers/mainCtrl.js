@@ -1,7 +1,7 @@
 /**
  * Created by vedorhto on 04/09/2015.
  */
-angular.module('myApp.controllers',['ngRoute','myApp.home','myApp.login','myApp.register','myApp.nav','myApp.newevent']);
+angular.module('myApp.controllers',['ngRoute','myApp.home','myApp.login','myApp.register','myApp.nav','myApp.logout','myApp.newevent']);
 /*
 angular.module('myApp.home',[]);
 angular.module('myApp.login',[]);

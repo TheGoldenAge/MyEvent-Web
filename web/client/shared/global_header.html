@@ -1,4 +1,4 @@
-<div class="global-header">
+<div class="global-header" ng-controller="NavController">
     <div class="global-header-space">
         <div class="major">
             <a class="myevent-logo" href="#">
@@ -7,11 +7,15 @@
             </a>
 
         </div>
-        <div class="minor">
-
+        <div class="minor" ng-show="!isConnected()">
             <a href="#register"  class ="header-link">{{'SIGN_UP'|translate}}</a>
             <a href="#login" class="header-link">{{'SIGN_IN'|translate}}</a>
             <a class="btn btn-lg btn-primary header-link " href="#newevent">{{'CREATE_AN_EVENT'|translate}}</a>
+
+        </div>
+        <div class="minor" ng-show="isConnected()" >
+            <a style="cursor:pointer;" ng-click="logOut()" class="header-link" ng-controller="LogoutController">{{'LOGOUT' | translate}}</a>
+            <a class="btn btn-lg btn-primary header-link " href="#">{{'CREATE_AN_EVENT'|translate}}</a>
 
         </div>
     </div>

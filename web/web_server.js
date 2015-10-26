@@ -75,7 +75,7 @@ app.use('/', express.static(__dirname + '/client'));
 })*/
 
 //Get the backend url
-app.get("backendURL", function(req, res){
+app.get("/backendURL/", function(req, res){
     logger.debug('get /backendURL/ :' + backend);
     res.send(backend);
 });
