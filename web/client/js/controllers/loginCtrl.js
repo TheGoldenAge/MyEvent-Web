@@ -10,7 +10,7 @@ angular.module('myApp.login',[])
         console.log(AuthService.getUserStatus());
 
         //reset login status
-        //AuthService.ClearCredentials();
+        AuthService.ClearCredentials();
 
         $scope.logIn = function logIn(username, password){
             //initial values
@@ -21,7 +21,8 @@ angular.module('myApp.login',[])
             //console.log('username '+ username +', password ' + password)
             if(username !== undefined && password !== undefined){
                 AuthService.logIn(username, password)
-                    .then(function(data){
+                    .then(function(callback){
+                        console.log('data: ' +  JSON.stringify(callback.data) + ' status: '+ callback.status);
                         //AuthService.isLogged = true;
                         //$window.sessionStorage.token  = data.token;
                         console.log('login success')
@@ -29,19 +30,20 @@ angular.module('myApp.login',[])
                         $scope.disabled =false;
                         $scope.login ={};
                     })
-                    .catch(function(status, data){
-                        console.log(status);
-                        console.log(data);
+                    .catch(function(callback){
+                        console.log('data: ' +  JSON.stringify(callback.data) + 'status: '+ callback.status);
+                        //console.log(status);
+                        //console.log(data);
                         $scope.error =true;
                         $scope.errorMessage = "";
                         $scope.disabled =false;
                         $scope.loginForm = {};
                         //if (status == 403) {
-                        /*var myMessage = data.message;
+                        var myMessage = callback.data.message;
                         $('#error .modal-body').html("<p><div style='text-align: center; font-size: 20px; font-weight: bold;'>" + myMessage );
                         $('#error').modal("show");
                         $('div#error.modal').css('z-index', 2000);
-                        $('#error.modal.fade.in').css('z-index', 2000);*/
+                        $('#error.modal.fade.in').css('z-index', 2000);
                         //}
                     });
             }

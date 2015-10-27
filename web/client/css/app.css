@@ -118,6 +118,7 @@ form#index-form{
   font-size: 14px;
   margin-top: 5px;
 }
+.input-field input[name="username"],
 .input-field input[type="email"],
 .input-field input[type="password"],
 .input-field input[name="login"]{
@@ -134,30 +135,13 @@ form#index-form{
    transition: all 0.15s ease-in-out 0s;
    width: 100%;
  }
-.input-field input[name="username"]{
-  border: 1px solid #dfdfdf;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  box-shadow: 0 0 4px rgba(233, 233, 233, 0.2);
-  margin: 6px 0;
-  padding: 12px;
-  -webkit-transition: all 0.15s ease-in-out 0s;
-  -moz-transition: all 0.15s ease-in-out 0s;
-  -o-transition: all 0.15s ease-in-out 0s;
-  transition: all 0.15s ease-in-out 0s;
-  width: 100%;
-}
+.input-field input[name="username"]:focus,
 .input-field input[type="email"]:focus,
 .input-field input[type="password"]:focus,
 .input-field input[name="login"]:focus{
    outline: none;
    border: 1px solid #bdbdbd;
  }
-.input-field input[name="username"]:focus{
-  outline: none;
-  border: 1px solid #bdbdbd;
-}
 .input-field input[type="submit"]{
   /*background: #f85f64;*/
   background: #1c94c6;
@@ -310,7 +294,6 @@ Global footer
   display: block;
   letter-spacing: .5px;
 }
-
 .footer-space{
   max-width: 1080px;
   margin-left: auto;
@@ -322,7 +305,6 @@ Global footer
   padding-bottom: 25px;*/
   color: #666;
 }
-
 .footer-links{
   box-sizing: border-box;
   display: inline-block;
@@ -334,28 +316,23 @@ Global footer
   width: 24.1%;
   list-style: none;
 }
-
 .footer-links a{
   color: #ccc!important;
   text-decoration: none;
 }
-
 .footer-links a:focus, .footer-links a:hover, .footer-links a:active {
   text-decoration : underline;
 }
-
 .text-small {
   font-size: 12px;
   line-height: 18px;
   font-weight: 400;
 }
-
 .text-medium {
   font-size: 15px;
   line-height: 22px;
   font-weight: 400;
 }
-
 .text-centered{
   text-align: center;
 }
@@ -366,7 +343,6 @@ Global footer
   margin-left: auto;
   margin-right: auto;
 }
-
 .footer-copyright{
   padding-bottom: 5px;
   margin-bottom: auto;

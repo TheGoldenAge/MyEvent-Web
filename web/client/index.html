@@ -2,21 +2,23 @@
 <!--[if lt IE 7]>      <html lang="en" ng-client="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-client="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-client="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html lang="fr" ng-app="myApp" class="no-js" xmlns="http://www.w3.org/1999/html"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My Events</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
   <meta http-equiv="content-type" content="image/png;charset=utf-8"/>
-  <!--<meta name="robots" content="index, follow" />
-  <meta http-equiv="Content-Language" content="fr" />-->
-  <base href="/"/>
+  <meta http-equiv="Content-Language" content="fr" />
+  <meta name="description" content="">
+  <title>My Events</title>
+
+  <!--<meta name="robots" content="index, follow" />-->
+
+  <!--<base href="/"/>-->
   <!--=======Font Open Sans======-->
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
+  <!--<link href='bower_components/bootstrap/fonts/' rel='stylesheet' type='text/css'>-->
   <!--=======Stylesheet======-->
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
@@ -33,13 +35,18 @@
 
   <link rel="stylesheet" href="css/app.css">
 
-
+  <!--[if lt IE 9]>
+  <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 <body ng-cloak>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
+  <div ng-include="'shared/error_modal.html'"></div>
+  <div ng-include="'shared/info_modal.html'"></div>
   <div ng-view style="height: 100%;"></div>
 
   <!--div>Angular seed app: v<span app-version></span></div-->

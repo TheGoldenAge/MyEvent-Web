@@ -1,10 +1,15 @@
 <div class="input-field">
-    <label for="username">{{'LOGIN'|translate}}</label>
-    <!--<input type="email" name="email" required="email" id="email" ng-model="login.username"/>-->
-    <input type="text" name="username" required="username" id="username" ng-model="login.username"/>
-    <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
-    <label for="password">{{'PASSWORD'|translate}}</label>
-    <input type="password" name="password" required id="password" ng-model="login.password"/>
+    <div class="form-group">
+        <label for="username">{{'LOGIN'|translate}}</label>
+        <!--<input type="email" name="email" required="email" id="email" ng-model="login.username"/>-->
+        <input type="text" name="username" required="username" id="username" ng-model="login.username"/>
+        <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+        <div></div>
+    </div>
+    <div class="form-group">
+        <label for="password">{{'PASSWORD'|translate}}</label>
+        <input type="password" name="password" required id="password" ng-model="login.password"/>
+    </div>
     <input type="submit" value="{{'SIGN_IN'|translate}}" ng-click="logIn(login.username, login.password)"/>
     <p class="text-p">Don't have an account? <a href="#/register">{{'SIGN_UP'|translate}}</a></p>
 </div>

@@ -11,7 +11,9 @@ angular.module('myApp.AuthenticationService',[])
             getUserStatus: getUserStatus,
             logIn: logIn,
             logOut: logOut,
-            register: register
+            register: register,
+            ClearCredentials:ClearCredentials,
+            SetCredentials:SetCredentials
         });
 
         function isLoggedIn(){
@@ -35,18 +37,20 @@ angular.module('myApp.AuthenticationService',[])
                 withCredentials:true
             })
             .success(function(data, status){
+                    console.log('data: ' +  JSON.stringify(data) + 'status: '+ status);
                 if(status === 200 && data.status){
                     user=true;
                     sharedProperties.setConnected(true);
-                    deferred.resolve();
+                    deferred.resolve({data:data,status:status});
                 }else{
                     user=false;
-                    deferred.reject();
+                    deferred.reject({data:data,status:status});
                 }
             })
-            .error(function(data){
+            .error(function(data, status){
+                    //console.log('data: ' + JSON.stringify(data) + 'status: '+ status);
                 user = false;
-                deferred.reject();
+                deferred.reject({data:data,status:status});
             });
 
             // return promise object
@@ -58,17 +62,23 @@ angular.module('myApp.AuthenticationService',[])
             var deferred = $q.defer();
 
             //send a get request to the server
-            $http.get('/api/logout')
-                .success(function(data){
+            //$http.get('/api/logout')
+            $http({
+                url:'/api/logout',
+                method:'GET'
+            })
+            .success(function(data, status){
+                    console.log('data: ' +  JSON.stringify(data) + 'status: '+ status);
                     user = false;
-                    sharedProperties.setConnected(false);
-                    deferred.reject();
-                })
-                .error(function(data){
-                    sharedProperties.setConnected(false);
-                    user = false;
-                    deferred.reject();
-                });
+                sharedProperties.setConnected(false);
+                deferred.resolve();
+            })
+            .error(function(data, status){
+                    console.log('data: ' +  JSON.stringify(data) + 'status: '+ status);
+                sharedProperties.setConnected(false);
+                user = false;
+                deferred.reject();
+            });
 
             // return promise object
             return deferred.promise;
@@ -78,7 +88,7 @@ angular.module('myApp.AuthenticationService',[])
             return{};
         }
 
-        /*service.SetCredentials = function(username, password){
+        function SetCredentials(username, password){
             var authdata = Base64.encode(username + ':' +password);
 
             $rootScope.globals = {
@@ -89,13 +99,13 @@ angular.module('myApp.AuthenticationService',[])
             };
             $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
             $cookieStore.put('globals', $rootScope.globals);
-        };*/
+        };
 
-        /*service.ClearCredentials = function(){
+        function ClearCredentials(){
             $rootScope.globals = {};
             $cookieStore.remove('globals');
             $http.defaults.headers.common.Authorization = 'Basic ';
-        };*/
+        };
 
         //return service;
     }]);

@@ -4,9 +4,9 @@
 'use strict'
 
 angular.module('myApp.register',[])
-    .controller('RegisterController',['$scope','$rootScope','$location','$http','AuthenticationService', function($scope, $rootScope, $location, $http, AuthenticationService){
+    .controller('RegisterController',['$scope','$rootScope','$location','$http','AuthService', function($scope, $rootScope, $location, $http, AuthService){
         //reset login status
-        AuthenticationService.ClearCredentials();
+        AuthService.ClearCredentials();
 
         $scope.register = function(){
             $scope.dataLoading = true;

@@ -203,14 +203,14 @@ angular.module('myApp', ['ngSanitize', 'ui.router', 'ngResource', 'ngRoute', 'ng
                 }
             }
         });
-        $httpProvider.interceptors.push('TokenInterceptor');
+        //$httpProvider.interceptors.push('TokenInterceptor');
     })
-    .run(function($rootScope, $location, $route,AuthService){
+    /*.run(function($rootScope, $location, $route,AuthService){
         $rootScope.$on('$routeChangeStart', function(event, next, current){
             if(AuthService.isLogged() === false){
                 $location.path('/login');
             }
         })
-    });
+    })*/;
 
 

@@ -43,10 +43,11 @@
     "karma-phantomjs-launcher": "latest",
     "karma-requirejs": "^0.2.2",
     "karma-script-launcher": "latest",
+    "lodash": "^3.10.1",
     "mocha": "latest",
     "protractor": "^2.1.0",
     "require-dir": "latest",
-    "requirejs": "latest",
+    "requirejs": "^2.1.20",
     "shelljs": "^0.2.6",
     "supertest": "latest",
     "through": "latest"

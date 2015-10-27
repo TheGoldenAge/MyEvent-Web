@@ -12,7 +12,7 @@ angular.module('myApp.nav',[])
                 var response = {};
                 angular.forEach($scope.languages, function(item){
                     if(item.language == $translate.storage().get()){
-                        console.log(item)
+                        //console.log(item)
                         response = item;
                     }
                 });
