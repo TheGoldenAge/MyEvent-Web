@@ -2,7 +2,7 @@
  * Created by vedorhto on 26/10/2015.
  */
 angular.module('myApp.AuthenticationService',[])
-    .factory('AuthService',['Base64','$http','$cookieStore','$rootScope','$timeout','$location','$q','sharedProperties', function(Base64,$http,$cookieStore,$rootScope,$timeout,$location,$q,sharedProperties){
+    .factory('AuthService',['Base64','$http','$cookieStore','$rootScope','$timeout','$location','$q','$window','sharedProperties', function(Base64,$http,$cookieStore,$rootScope,$timeout,$location,$q,$window,sharedProperties){
         //our user variable
         var user = null;
 
@@ -10,6 +10,7 @@ angular.module('myApp.AuthenticationService',[])
             isLogged : isLoggedIn,
             getUserStatus: getUserStatus,
             logIn: logIn,
+            googleLogIn: googleLogIn,
             logOut: logOut,
             register: register,
             ClearCredentials:ClearCredentials,
@@ -52,6 +53,39 @@ angular.module('myApp.AuthenticationService',[])
                 user = false;
                 deferred.reject({data:data,status:status});
             });
+
+            // return promise object
+            return deferred.promise;
+        };
+
+        function googleLogIn(){
+            //a new instance of deffered
+            var deferred = $q.defer();
+
+            //send a post request to the server
+            //$http.post('/api/login',{username:username, password:password})
+            //$window.location('/api/auth/google');
+            $http({
+                url:'/api/auth/google',
+                method:'GET',
+                withCredentials:true
+            })
+                .success(function(data, status){
+                    console.log('data: ' +  JSON.stringify(data) + 'status: '+ status);
+                    if(status === 200 && data.status){
+                        user=true;
+                        sharedProperties.setConnected(true);
+                        deferred.resolve({data:data,status:status});
+                    }else{
+                        user=false;
+                        deferred.reject({data:data,status:status});
+                    }
+                })
+                .error(function(data, status){
+                    console.log('data: ' + JSON.stringify(data) + 'status: '+ status);
+                    user = false;
+                    deferred.reject({data:data,status:status});
+                });
 
             // return promise object
             return deferred.promise;

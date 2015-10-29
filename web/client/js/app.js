@@ -9,8 +9,62 @@ angular.module('myApp', ['ngSanitize', 'ui.router', 'ngResource', 'ngRoute', 'ng
             $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|sesame):/);
             // pour les liens sesame, pour qu'angular ne rajoute pas unsafe devant
         }])
-    .config(['$routeProvider','$httpProvider', function($routeProvider,$httpProvider) {
+    .config(['$stateProvider','$urlRouterProvider','$routeProvider','$httpProvider', function($stateProvider,$urlRouterProvider,$routeProvider,$httpProvider) {
 
+        /*$stateProvider
+            .state('home', {
+                url:'/home',
+                controller: 'HomeController',
+                templateUrl: 'views/home.html',
+                resolve: {
+                    'me': function (mymefactory) {
+                        return mymefactory.myBackURL().then(function (data) {
+                            return mymefactory.myme();
+                        });
+                    }
+                }
+            })
+            .state('login', {
+                url:'/login',
+                controller: 'LoginController',
+                templateUrl: 'views/login.html',
+                resolve: {
+                    'me': function (mymefactory) {
+                        return mymefactory.myBackURL().then(function (data) {
+                            return mymefactory.myme();
+                        });
+                    }
+                }
+            })
+            .state('register', {
+                url:'/register',
+                controller: 'RegisterController',
+                templateUrl: 'views/register.html',
+                resolve: {
+                    'me': function (mymefactory) {
+                        return mymefactory.myBackURL().then(function (data) {
+                            return mymefactory.myme();
+                        });
+                    }
+                }
+            })
+            .state('logout', {
+                url:'/logout',
+                controller: 'logoutCtrl',
+                resolve: {
+                    'me': function (mymefactory) {
+                        return mymefactory.myBackURL().then(function (data) {
+                            return mymefactory.myme();
+                        });
+                    }
+                }
+            })
+            .state('newevent', {
+                url:'/newevent',
+                controller: 'NewEventController',
+                templateUrl: 'views/newevent.html'
+            })
+        $urlRouterProvider.otherwise('/login')*/
         $routeProvider
             .when('/', {
                 controller: 'HomeController',
@@ -135,39 +189,39 @@ angular.module('myApp', ['ngSanitize', 'ui.router', 'ngResource', 'ngRoute', 'ng
             'OR':'ou',
             'CONNECT_WITH':'Se connecter avec',
             'SIGN_UP_WITH':'S\'inscrire avec',
-            'ORG_EVENT':'Votre évenement',
+            'ORG_EVENT':'Votre Ã©venement',
             'MY_EVENT':'My Event',
             'WEDDING':'Marriage',
-            'BAPTISM':'Baptême',
-            'HOW_IT_WORKS':'Comment ça marche?',
+            'BAPTISM':'BaptÃªme',
+            'HOW_IT_WORKS':'Comment Ã§a marche?',
             'FEES':'Tarifs',
             'CONTACT':'Nous contacter',
             'BY_MAIL':'Par email',
-            'LOGOUT':'Se déconnecter',
-            'CREATE_AN_EVENT':'Créer un événement',
+            'LOGOUT':'Se dÃ©connecter',
+            'CREATE_AN_EVENT':'CrÃ©er un Ã©vÃ©nement',
             'CAR_ORGANIZE':'Organiser votre mariage',
-            'CAR_ORGANIZE_P':'Créer votre site de mariage personalisé à votre image',
+            'CAR_ORGANIZE_P':'CrÃ©er votre site de mariage personalisÃ© Ã  votre image',
             'CAR_CREATE':'Choisir vos faire parts',
-            'CAR_CREATE_P':'Envoyer les faire parts personnalisés aux invités',
-            'CAR_SHARE':'Espace partagé',
+            'CAR_CREATE_P':'Envoyer les faire parts personnalisÃ©s aux invitÃ©s',
+            'CAR_SHARE':'Espace partagÃ©',
             'CAR_SHARE_P':'Informations utiles, photos, diaporamas, promotions',
-            'MAR_CREATE':'Créer',
-            'MAR_CREATE_P' :'Organiser votre mariage avec des invités triés sur le volet, des faires parts personnalisés et en partageant les informations utiles.',
+            'MAR_CREATE':'CrÃ©er',
+            'MAR_CREATE_P' :'Organiser votre mariage avec des invitÃ©s triÃ©s sur le volet, des faires parts personnalisÃ©s et en partageant les informations utiles.',
             'VIEW_DETAILS':'En savoir plus',
             'MAR_SHARE':'Partager',
-            'MAR_SHARE_P':'Un espace personnel intime avec les invités. Un espace de partage pour profiter de l\'évenement et partager photos et vidéos.',
+            'MAR_SHARE_P':'Un espace personnel intime avec les invitÃ©s. Un espace de partage pour profiter de l\'Ã©venement et partager photos et vidÃ©os.',
             'MAR_THANK':'Remercier',
-            'MAR_THANK_P':'Envoyer des cartes de remerciements personnalisés. Découvrir les liste des cadeaux des invités et créer votre album souvenir.',
+            'MAR_THANK_P':'Envoyer des cartes de remerciements personnalisÃ©s. DÃ©couvrir les liste des cadeaux des invitÃ©s et crÃ©er votre album souvenir.',
             'PARTNERS':'Nos partenaires',
-            'FEAT_CREATE':'Créer, organiser. ',
+            'FEAT_CREATE':'CrÃ©er, organiser. ',
             'FEAT_CREATE_SP':'Personnaliser votre mariage ',
-            'FEAT_CREATE_P':'Personnaliser votre évenement (Diaporama, playlist partagée etc...). Sélectionner les invités parmis vos amis. Choisir votre faire part parmi une grande liste et les envoyer par email ou par courier aux invités. Personnaliser les rappels et les confirmations de chaque invités.',
-            'FEAT_SHARE':'Vivre l\'émotion du moment.',
+            'FEAT_CREATE_P':'Personnaliser votre Ã©venement (Diaporama, playlist partagÃ©e etc...). SÃ©lectionner les invitÃ©s parmis vos amis. Choisir votre faire part parmi une grande liste et les envoyer par email ou par courier aux invitÃ©s. Personnaliser les rappels et les confirmations de chaque invitÃ©s.',
+            'FEAT_SHARE':'Vivre l\'Ã©motion du moment.',
             'FEAT_SHARE_SP':'Immortaliser et partager',
-            'FEAT_SHARE_P':'Vivre l\'évenement en toute sérénité. Un espace privé pour le partage des photos et vidéos entre les invités. La récupération des photos et vidéos devient un jeu d\'enfant.',
+            'FEAT_SHARE_P':'Vivre l\'Ã©venement en toute sÃ©rÃ©nitÃ©. Un espace privÃ© pour le partage des photos et vidÃ©os entre les invitÃ©s. La rÃ©cupÃ©ration des photos et vidÃ©os devient un jeu d\'enfant.',
             'FEAT_THANK':'Remercier. ',
-            'FEAT_THANK_SP':'Carte personnalisée.',
-            'FEAT_THANK_P':'Choisir les cartes de remerciements personnalisés ou bouquets de fleurs à envoyer aux invités. Découvrir la liste de cadeaux.',
+            'FEAT_THANK_SP':'Carte personnalisÃ©e.',
+            'FEAT_THANK_P':'Choisir les cartes de remerciements personnalisÃ©s ou bouquets de fleurs Ã  envoyer aux invitÃ©s. DÃ©couvrir la liste de cadeaux.',
             'LANGUAGES':'Changer de langue'
 
         });

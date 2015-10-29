@@ -9,13 +9,13 @@ angular.module('myApp.logout',[])
 
             AuthService.logOut()
                 .then(function(){
-                    console.log('je suis dans then');
+                    //console.log('je suis dans then');
                     //console.log(AuthService.getUserStatus());
                     //console.log(AuthService.isLogged());
                     //if(!AuthService.isLogged())$location.path("/login");
                 })
                 .catch(function(){
-                    console.log('je suis dans catch');
+                    //console.log('je suis dans catch');
                 });
 
         }

@@ -82,10 +82,16 @@ form#index-form{
   background: #4099ff;
 }
 .social ul li a.google-plus{
-  background: #e9544f;
+  background: #DC4E41/*#e9544f*/;
+
 }
 .social ul li a.facebook{
   background: #3b5998;/*#3a589a*/
+}
+@font-face {
+  font-family: Roboto;
+  font-weight: normal;
+  src: url('../fonts/RobotoTTF/Roboto-Medium.ttf');
 }
 /*Form*/
 .divider{
