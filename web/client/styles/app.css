@@ -200,10 +200,10 @@ form#index-form{
   height: 1%;
 }
 #page_index.page-signup {
-  background-image: url('../img/kartandtinki1_photo-wallpapers_02.jpg');
+  background-image: url('../images/kartandtinki1_photo-wallpapers_02.jpg');
 }
 #page_index.page-login {
-  background-image: url('../img/blue-background-full-hd.jpg');
+  background-image: url('../images/blue-background-full-hd.jpg');
 }
 #page_index .index-navbar {
   padding: 0 100px;
@@ -462,7 +462,7 @@ body {
   z-index: 10;
 }
 
-/* Declare heights because of positioning of img element */
+/* Declare heights because of positioning of images element */
 .carousel .item {
   height: 400px;
   background-color: #777;

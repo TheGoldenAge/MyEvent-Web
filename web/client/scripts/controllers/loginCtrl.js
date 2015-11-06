@@ -38,13 +38,20 @@ angular.module('myApp.login',[])
                         $scope.errorMessage = "";
                         $scope.disabled =false;
                         $scope.loginForm = {};
-                        //if (status == 403) {
-                        var myMessage = callback.data.message;
-                        $('#error .modal-body').html("<p><div style='text-align: center; font-size: 20px; font-weight: bold;'>" + myMessage );
-                        $('#error').modal("show");
-                        $('div#error.modal').css('z-index', 2000);
-                        $('#error.modal.fade.in').css('z-index', 2000);
-                        //}
+                        if (callback.status == 403) {
+                            var myMessage = callback.data.message;
+                            $('#error .modal-body').html("<p><div style='text-align: center; font-size: 20px; font-weight: bold;'>" + myMessage );
+                            $('#error').modal("show");
+                            $('div#error.modal').css('z-index', 2000);
+                            $('#error.modal.fade.in').css('z-index', 2000);
+                        }
+                        if (callback.status == 0) {
+                            var myMessage = "Serveur injoignable!";
+                            $('#error .modal-body').html("<p><div style='text-align: center; font-size: 20px; font-weight: bold;'>" + myMessage );
+                            $('#error').modal("show");
+                            $('div#error.modal').css('z-index', 2000);
+                            $('#error.modal.fade.in').css('z-index', 2000);
+                        }
                     });
             }
         };

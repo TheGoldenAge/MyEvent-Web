@@ -49,7 +49,7 @@ angular.module('myApp.AuthenticationService',[])
                 }
             })
             .error(function(data, status){
-                    //console.log('data: ' + JSON.stringify(data) + 'status: '+ status);
+                    console.log('data: ' + JSON.stringify(data) + 'status: '+ status);
                 user = false;
                 deferred.reject({data:data,status:status});
             });
@@ -58,6 +58,7 @@ angular.module('myApp.AuthenticationService',[])
             return deferred.promise;
         };
 
+        //Google oauth2
         function googleLogIn(){
             //a new instance of deffered
             var deferred = $q.defer();
@@ -67,6 +68,40 @@ angular.module('myApp.AuthenticationService',[])
             //$window.location('/api/auth/google');
             $http({
                 url:'/api/auth/google',
+                method:'GET',
+                withCredentials:true
+            })
+                .success(function(data, status){
+                    console.log('data: ' +  JSON.stringify(data) + 'status: '+ status);
+                    if(status === 200 && data.status){
+                        user=true;
+                        sharedProperties.setConnected(true);
+                        deferred.resolve({data:data,status:status});
+                    }else{
+                        user=false;
+                        deferred.reject({data:data,status:status});
+                    }
+                })
+                .error(function(data, status){
+                    console.log('data: ' + JSON.stringify(data) + 'status: '+ status);
+                    user = false;
+                    deferred.reject({data:data,status:status});
+                });
+
+            // return promise object
+            return deferred.promise;
+        };
+
+        //facebook oauth
+        function facebookLogIn(){
+            //a new instance of deffered
+            var deferred = $q.defer();
+
+            //send a post request to the server
+            //$http.post('/api/login',{username:username, password:password})
+            //$window.location('/api/auth/google');
+            $http({
+                url:'/api/auth/facebook',
                 method:'GET',
                 withCredentials:true
             })

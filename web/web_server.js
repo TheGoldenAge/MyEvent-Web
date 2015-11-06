@@ -80,7 +80,7 @@ app.get("/backendURL/", function(req, res){
     res.send(backend);
 });
 
-//app.use(favicon(__dirname + "/client/img/favicon.ico"))
+//app.use(favicon(__dirname + "/client/images/favicon.ico"))
 
 app.listen(app.port,app.ipaddress, function() {
     logger.info("[" + moment(new Date()).format("YYYY/MM/DD HH:mm:ss") + "] Node server Started on %s:%d...",app.ipaddress,app.port)

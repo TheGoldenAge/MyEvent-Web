@@ -14,11 +14,11 @@ module.exports = function(config){
         'client/bower_components/angular-sanitize/angular-sanitize.js',
         'client/bower_components/angular-translate/angular-translate.js',
         'client/bower_components/angular-ui-router/release/angular-ui-router.js',
-        'client/components/**/*.js',
-        'client/test/**/*.js',
-        'client/test/*.js',
-        'client/js/**/*.js',
-        'client/js/app.js'
+        'client/components/**/*.scripts',
+        'client/test/**/*.scripts',
+        'client/test/*.scripts',
+        'client/scripts/**/*.scripts',
+        'client/scripts/app.js'
     ],
 
     autoWatch : true,
